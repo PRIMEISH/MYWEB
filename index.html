@@ -4,6 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        body{
+            background-color: rgb(119, 204, 230);
+        }
 @keyframes blink {
             0% {
                 opacity: 1;
@@ -19,23 +22,119 @@
         }
         .blinking-text {
             text-align: center;
-            margin-top: 20%;
-            font-size: 10vw;
+            font-size: 5vw;
             color: red;
             animation: blink 1s infinite;
         }
 
+.container{
+    display: flex;
+    flex-direction: column;
+  background-color: DodgerBlue;
+  height:70vh;
+  width: 50vw;
+margin-left:25vw;
+margin-right:25vw;
+}
+
+        .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin: .1vw;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: white;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: white;
+  color: white;
+  transform: rotateY(180deg);
+}
     </style>
 </head>
 <body>
 <div class="blinking-text">
       <marquee scrollamount="10">Contents of this site is underdevelopment! Please contact the admin</marquee>
     </div>
+   <div class="container"> 
+    <!--card 1-->
+    <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="icons8-instagram-240.png" alt="Avatar" style="width:100%;height:100%;">
+    </div>
     
+    <div class="flip-card-back">
+     <a href="https://www.instagram.com/">
+        <h1>Instagram</h1> 
+      <p>Architect & Engineer</p> 
+     </a>
+    </div>
+  </div>
+</div>
+<!--card 2-->
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="icons8-youtube-200.png" alt="Avatar" style="width:100%;height:100%;">
+    </div>
+    
+    <div class="flip-card-back">
+     <a href="https://www.instagram.com/">
+        <h1>Instagram</h1> 
+      <p>Architect & Engineer</p> 
+     </a>
+    </div>
+  </div>
+</div>
+
+<!--card 3-->
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="icons8-youtube-200.png" alt="Avatar" style="width:100%;height:100%;">
+    </div>
+    
+    <div class="flip-card-back">
+     <a href="https://www.instagram.com/">
+        <h1>Instagram</h1> 
+      <p>Architect & Engineer</p> 
+     </a>
+    </div>
+  </div>
+</div>
+
+
+</div>
 </body>
 </html>
-
-
 
 
 
