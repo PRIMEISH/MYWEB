@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apparel Catalog - Shirts & T-Shirts</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color:#333; background:#fafafa; }
+
+    /* Header */
+    header {
+      background:#fff;
+      border-bottom:1px solid #ddd;
+      padding:15px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    header .logo { font-size:1.5em; font-weight:bold; color:#222; }
+    header nav a {
+      margin-left:20px; text-decoration:none; color:#444; font-weight:500;
+    }
+    header nav a:hover { color:#e60023; }
+
+    /* Hero */
+    .hero {
+      background:url('https://images.unsplash.com/photo-1521334884684-d80222895322?w=1600') center/cover no-repeat;
+      color:#fff; text-align:center;
+      padding:100px 20px;
+    }
+    .hero h1 { font-size:2.8em; margin-bottom:10px; text-shadow:1px 1px 4px rgba(0,0,0,0.5); }
+    .hero p { font-size:1.2em; margin-bottom:20px; }
+    .hero .btn {
+      background:#000; color:#fff; padding:12px 24px; text-decoration:none; font-size:1em;
+    }
+
+    /* Products */
+    .products {
+      max-width:1200px; margin:50px auto; padding:0 20px;
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px;
+    }
+    .product-card {
+      background:#fff; border:1px solid #eee; padding:20px;
+      text-align:center; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.05);
+      transition:transform 0.2s;
+    }
+    .product-card:hover { transform:translateY(-5px); }
+    .product-card img { max-width:100%; height:auto; border-radius:6px; }
+    .product-card h2 { font-size:1.1em; margin:15px 0 10px; }
+    .price { color:#e60023; font-size:1.2em; margin-bottom:10px; }
+    .buy-links { display:flex; justify-content:center; gap:10px; margin-top:10px; }
+    .buy-links a {
+      padding:8px 14px; text-decoration:none; color:#fff; font-size:0.9em; border-radius:4px;
+    }
+    .buy-links .amazon { background:#ff9900; }
+    .buy-links .flipkart { background:#2874f0; }
+    .buy-links a:hover { opacity:0.9; }
+
+    /* Footer */
+    footer {
+      background:#f5f5f5; padding:20px; text-align:center; border-top:1px solid #ddd;
+      margin-top:40px;
+    }
+    footer a { color:#555; text-decoration:none; margin:0 8px; font-size:0.9em; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">ApparelBrand</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#products">Catalog</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Discover Your Style</h1>
+    <p>Trendy Shirts & T-Shirts Collection</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </section>
+
+  <!-- Product Catalog -->
+  <section id="products" class="products">
+
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Classic White Shirt" />
+      <h2>Classic White Shirt</h2>
+      <p class="price">₹999</p>
+      <div class="buy-links">
+        <a href="#" target="_blank" class="amazon">Amazon</a>
+        <a href="#" target="_blank" class="flipkart">Flipkart</a>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602810318383-e6f5d5d719fa?w=600" alt="Denim Shirt" />
+      <h2>Denim Shirt</h2>
+      <p class="price">₹1,499</p>
+      <div class="buy-links">
+        <a href="#" target="_blank" class="amazon">Amazon</a>
+        <a href="#" target="_blank" class="flipkart">Flipkart</a>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602810318072-d8f3fbc9a6ef?w=600" alt="Casual Checked Shirt" />
+      <h2>Casual Checked Shirt</h2>
+      <p class="price">₹1,299</p>
+      <div class="buy-links">
+        <a href="#" target="_blank" class="amazon">Amazon</a>
+        <a href="#" target="_blank" class="flipkart">Flipkart</a>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600" alt="Slim Fit T-Shirt" />
+      <h2>Slim Fit T-Shirt</h2>
+      <p class="price">₹799</p>
+      <div class="buy-links">
+        <a href="#" target="_blank" class="amazon">Amazon</a>
+        <a href="#" target="_blank" class="flipkart">Flipkart</a>
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1589985272303-9c02b49c6a1e?w=600" alt="Graphic Print Tee" />
+      <h2>Graphic Print Tee</h2>
+      <p class="price">₹699</p>
+      <div class="buy-links">
+        <a href="#" target="_blank" class="amazon">Amazon</a>
+        <a href="#" target="_blank" class="flipkart">Flipkart</a>
+      </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600" alt="Black Polo Shirt" />
+      <h2>Black Polo Shirt</h2>
+      <p class="price">₹899</p>
+      <div class="buy-links">
+        <a href="#" target="_blank" class="amazon">Amazon</a>
+        <a href="#" target="_blank" class="flipkart">Flipkart</a>
+      </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1600185365926-cbe86ef3fc67?w=600" alt="Oversized Tee" />
+      <h2>Oversized Tee</h2>
+      <p class="price">₹1,099</p>
+      <div class="buy-links">
+        <a href="#" target="_blank" class="amazon">Amazon</a>
+        <a href="#" target="_blank" class="flipkart">Flipkart</a>
+      </div>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?w=600" alt="Formal Blue Shirt" />
+      <h2>Formal Blue Shirt</h2>
+      <p class="price">₹1,799</p>
+      <div class="buy-links">
+        <a href="#" target="_blank" class="amazon">Amazon</a>
+        <a href="#" target="_blank" class="flipkart">Flipkart</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ApparelBrand. All rights reserved.</p>
+    <div>
+      <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+</body>
+</html>
