@@ -4,132 +4,206 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Personal Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* Background animation */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      color: #fff;
+      background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #283c86);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    header {
-      background: #0d6efd;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin: 10px 0 0;
-      font-size: 1.2rem;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-    }
-
-    .links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      width: 100%;
-      max-width: 800px;
-    }
-
-    .links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+    /* Navbar */
+    nav {
+      background: rgba(0, 0, 0, 0.6);
       padding: 15px;
-      border-radius: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
       text-decoration: none;
-      color: white;
       font-weight: bold;
-      transition: 0.3s;
-      font-size: 1rem;
+      transition: color 0.3s;
     }
 
-    .links a img {
-      width: 4vw;
-      height: 4vh;
+    nav a:hover {
+      color: #fdbb2d;
     }
 
-    /* Button colors */
-    .facebook { background: #1877f2; }
-    .instagram { background: #e4405f; }
-    .youtube { background: #ff0000; }
-    .twitter { background: #000000; } /* X/Twitter brand is now black */
-    .resume { background: #198754; }
-    .ecommerce { background: #fd7e14; }
-
-    .links a:hover {
-      opacity: 0.9;
-      transform: translateY(-3px);
+    /* Layout */
+    .container {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 220px 1fr 300px;
+      gap: 20px;
+      padding: 20px;
     }
 
-    footer {
+    /* Profile section */
+    .profile {
       text-align: center;
-      padding: 15px;
-      background: #f1f1f1;
-      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+
+    .profile h2 {
+      margin: 10px 0 0;
+      font-size: 18px;
+    }
+
+    /* Social links */
+    .social-links {
+      display: grid;
+      grid-template-columns: repeat(2, 100px);
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .social-card {
+      background: rgba(255, 255, 255, 0.15);
+      width: 100px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 30px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-card:hover {
+      transform: scale(1.1);
+      color: #fff;
+    }
+
+    .social-card .preview {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    /* Specific hover colors */
+    .facebook:hover { background: #1877F2; }
+    .instagram:hover { background: #E1306C; }
+    .twitter:hover { background: #1DA1F2; }
+    .youtube:hover { background: #FF0000; }
+    .resume:hover { background: #6C63FF; }
+    .shop:hover { background: #28a745; }
+
+    /* Center content */
+    .main-content {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .main-content h2 {
+      margin-top: 0;
+    }
+
+    /* Right section (blogs) */
+    .right-section {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .social-links {
+        grid-template-columns: repeat(3, 80px);
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </nav>
 
-  <header>
-    <h1>PRIME-ISH</h1>
-    <p>Welcome to my personal website</p>
-  </header>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <div>
+      <div class="profile">
+        <img src="vacant.png" alt="My Logo">
+        <h2>My Name</h2>
+      </div>
 
-  <main>
-    <div class="links">
-      <a class="facebook" href="https://facebook.com/yourprofile" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="filter: invert(1)">
-        Facebook
-      </a>
-      <a class="instagram" href="https://instagram.com/yourprofile" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="filter: invert(1)">
-        Instagram
-      </a>
-      <a class="youtube" href="https://youtube.com/yourchannel" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="filter: invert(1)">
-        YouTube
-      </a>
-      <a class="twitter" href="https://twitter.com/yourprofile" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="Twitter (X)" style="filter: invert(1)">
-        Twitter
-      </a>
-      <a class="resume" href="resume.html">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/readthedocs.svg" alt="Resume" style="filter: invert(1)">
-        My Resume
-      </a>
-      <a class="ecommerce" href="ecommerce.html">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shopify.svg" alt="E-Commerce" style="filter: invert(1)">
-        My E-Commerce
-      </a>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" class="social-card facebook">
+          <i class="fab fa-facebook-f"></i>
+          <span class="preview">Facebook</span>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-card instagram">
+          <i class="fab fa-instagram"></i>
+          <span class="preview">Instagram</span>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-card twitter">
+          <i class="fab fa-twitter"></i>
+          <span class="preview">Twitter</span>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="social-card youtube">
+          <i class="fab fa-youtube"></i>
+          <span class="preview">YouTube</span>
+        </a>
+        <a href="resume.html" class="social-card resume">
+          <i class="fas fa-user-tie"></i>
+          <span class="preview">Resume</span>
+        </a>
+        <a href="ecommerce.html" class="social-card shop">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="preview">Shop</span>
+        </a>
+      </div>
     </div>
-  </main>
 
-  <footer>
-    © <span id="year"></span> Your Name. All rights reserved.
-  </footer>
+    <!-- Center Content -->
+    <div class="main-content">
+      <h2>Portfolio & Updates</h2>
+      <p>This section will showcase my projects, updates, and achievements. (Coming soon!)</p>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <h2>About Me</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ligula sed nulla tincidunt lacinia. 
+        Vivamus id erat in leo congue porta. Donec sed libero ac lorem tristique bibendum.
+      </p>
+    </div>
 
+    <!-- Right Section -->
+    <div class="right-section">
+      <h2>Blog & Content</h2>
+      <p>Coming soon: blogs, articles, and content writing samples.</p>
+    </div>
+  </div>
 </body>
 </html>
