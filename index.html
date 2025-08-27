@@ -1,145 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-    <style>
-        body{
-            background-color: rgb(119, 204, 230);
-        }
-@keyframes blink {
-            0% {
-                opacity: 1;
-            }
+    header {
+      background: #0d6efd;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-            50% {
-                opacity: 0;
-            }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-            100% {
-                opacity: 1;
-            }
-        }
-        .blinking-text {
-            text-align: center;
-            font-size: 5vw;
-            color: red;
-            animation: blink 1s infinite;
-        }
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+    }
 
-.container{
-    display: flex;
-    flex-direction: column;
-  background-color: DodgerBlue;
-  height:70vh;
-  width: 50vw;
-margin-left:25vw;
-margin-right:25vw;
-}
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
 
-        .flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-  margin: .1vw;
-}
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+    }
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
+    .links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+    .links a img {
+      width: 4vw;
+      height: 4vh;
+    }
 
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+    /* Button colors */
+    .facebook { background: #1877f2; }
+    .instagram { background: #e4405f; }
+    .youtube { background: #ff0000; }
+    .twitter { background: #000000; } /* X/Twitter brand is now black */
+    .resume { background: #198754; }
+    .ecommerce { background: #fd7e14; }
 
-.flip-card-front {
-  background-color: white;
-  color: black;
-}
+    .links a:hover {
+      opacity: 0.9;
+      transform: translateY(-3px);
+    }
 
-.flip-card-back {
-  background-color: white;
-  color: white;
-  transform: rotateY(180deg);
-}
-    </style>
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f1f1f1;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-<div class="blinking-text">
-      <marquee scrollamount="10">Contents of this site is underdevelopment! Please contact the admin</marquee>
-    </div>
-   <div class="container"> 
-    <!--card 1-->
-    <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="icons8-instagram-240.png" alt="Avatar" style="width:100%;height:100%;">
-    </div>
-    
-    <div class="flip-card-back">
-     <a href="https://www.instagram.com/">
-        <h1>Instagram</h1> 
-      <p>Architect & Engineer</p> 
-     </a>
-    </div>
-  </div>
-</div>
-<!--card 2-->
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="icons8-youtube-200.png" alt="Avatar" style="width:100%;height:100%;">
-    </div>
-    
-    <div class="flip-card-back">
-     <a href="https://www.instagram.com/">
-        <h1>Instagram</h1> 
-      <p>Architect & Engineer</p> 
-     </a>
-    </div>
-  </div>
-</div>
 
-<!--card 3-->
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="icons8-youtube-200.png" alt="Avatar" style="width:100%;height:100%;">
-    </div>
-    
-    <div class="flip-card-back">
-     <a href="https://www.instagram.com/">
-        <h1>Instagram</h1> 
-      <p>Architect & Engineer</p> 
-     </a>
-    </div>
-  </div>
-</div>
+  <header>
+    <h1>PRIME-ISH</h1>
+    <p>Welcome to my personal website</p>
+  </header>
 
+  <main>
+    <div class="links">
+      <a class="facebook" href="https://facebook.com/yourprofile" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="filter: invert(1)">
+        Facebook
+      </a>
+      <a class="instagram" href="https://instagram.com/yourprofile" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="filter: invert(1)">
+        Instagram
+      </a>
+      <a class="youtube" href="https://youtube.com/yourchannel" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="filter: invert(1)">
+        YouTube
+      </a>
+      <a class="twitter" href="https://twitter.com/yourprofile" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="Twitter (X)" style="filter: invert(1)">
+        Twitter
+      </a>
+      <a class="resume" href="resume.html">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/readthedocs.svg" alt="Resume" style="filter: invert(1)">
+        My Resume
+      </a>
+      <a class="ecommerce" href="ecommerce.html">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shopify.svg" alt="E-Commerce" style="filter: invert(1)">
+        My E-Commerce
+      </a>
+    </div>
+  </main>
 
-</div>
+  <footer>
+    © <span id="year"></span> Your Name. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
